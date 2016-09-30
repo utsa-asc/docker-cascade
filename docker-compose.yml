@@ -1,0 +1,21 @@
+cas8:
+  build: ./cas
+  environment:
+    HOSTNAME: RR170563IP01
+  extra_hosts:
+    - "RR170563IP01:172.17.0.3"
+  ports:
+    - 8080:8080
+    - 8443:8443
+  links:
+    - mysql:mysql
+
+mysql:
+  build: ./mysql
+  ports:
+    - 3306:3306
+  environment:
+    MYSQL_ROOT_PASSWORD: supersecret
+    MYSQL_DATABASE: cascade
+    MYSQL_USER: cas
+    MYSQL_PASSWORD: supersecret
