@@ -1,4 +1,4 @@
-cas8:
+cas:
   build: ./cas
   environment:
     HOSTNAME: RR170563IP01
@@ -6,7 +6,6 @@ cas8:
     - "RR170563IP01:172.17.0.3"
   ports:
     - 8080:8080
-    - 8443:8443
   links:
     - mysql:mysql
 
