@@ -1,5 +1,5 @@
-cas:
-  build: ./cas
+tomcat:
+  build: ./tomcat
   environment:
     HOSTNAME: RR170563IP01
   extra_hosts:

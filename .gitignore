@@ -2,7 +2,7 @@
 
 mysql/cascade.sql
 **/.DS_Store
-cas/cascade*
+tomcat/cascade*
 cascade_database_mysql
 
 publish.war/*
