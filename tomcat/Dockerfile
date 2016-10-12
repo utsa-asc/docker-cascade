@@ -6,7 +6,7 @@ ENV PATH $CATALINA_HOME/bin:$PATH
 
 RUN mkdir -p "$CAS_HOME"
 COPY ./cascade-8.0.1 /opt/cas
-COPY ./publish.war /opt/cas/tomcat/webapps/publish.war
+#COPY ./publish.war /opt/cas/tomcat/webapps/publish.war
 RUN mkdir -p "$CAS_HOME/tomcat/indexes"
 
 WORKDIR $CATALINA_HOME

@@ -5,6 +5,6 @@ mysql/cascade.sql
 tomcat/cascade*
 cascade_database_mysql
 
-publish.war/*
-!publish.war/META-INF
-!publish.war/WEB-INF
+publish/*
+!publish/META-INF
+!publish/WEB-INF

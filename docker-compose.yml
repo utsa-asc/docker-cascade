@@ -8,6 +8,8 @@ tomcat:
     - 8080:8080
   links:
     - mysql:mysql
+  volumes:
+    - ./publish:/opt/cas/tomcat/webapps/publish
 
 mysql:
   build: ./mysql
