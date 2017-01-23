@@ -8,3 +8,7 @@ cascade_database_mysql
 publish/*
 !publish/META-INF
 !publish/WEB-INF
+
+tmp/*
+exports/*
+cascade_database_mysql.zip
