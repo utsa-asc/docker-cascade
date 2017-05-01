@@ -1,28 +1,27 @@
-tomcat:
-  build: ./tomcat
-  environment:
-    HOSTNAME: RR170563IP01
-  extra_hosts:
-    - "RR170563IP01:172.17.0.4"
-  ports:
-    - 8080:8080
-  links:
-    - mysql:mysql
-    - mailcatcher:mailcatcher
-  volumes:
-    - ./publish:/opt/cas/tomcat/webapps/publish
+version: '3'
+services:
+  tomcat:
+    build: ./tomcat
+    container_name: RR170563IP01
+    ports:
+      - 8080:8080
+    links:
+      - mysql:mysql
+      - mailcatcher:mailcatcher
+    volumes:
+      - ./publish:/opt/cas/tomcat/webapps/publish
 
-mysql:
-  build: ./mysql
-  ports:
-    - 3306:3306
-  environment:
-    MYSQL_ROOT_PASSWORD: supersecret
-    MYSQL_DATABASE: cascade
-    MYSQL_USER: cas
-    MYSQL_PASSWORD: supersecret
+  mysql:
+    build: ./mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: supersecret
+      MYSQL_DATABASE: cascade
+      MYSQL_USER: cas
+      MYSQL_PASSWORD: supersecret
 
-mailcatcher:
-  image: tophfr/mailcatcher
-  ports:
-    - 8825:80
+  mailcatcher:
+    image: tophfr/mailcatcher
+    ports:
+      - 8825:80
