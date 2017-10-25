@@ -1,4 +1,4 @@
-FROM openjdk:8-jre
+FROM java:openjdk-8-jre-alpine
 
 ENV CAS_HOME /opt/cas
 ENV CATALINA_HOME /opt/cas/tomcat

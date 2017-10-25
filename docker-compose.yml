@@ -2,9 +2,12 @@ version: '3'
 services:
   tomcat:
     build: ./tomcat
+    depends_on:
+      - mysql
+      - mailcatcher
     container_name: RR170563IP01
     ports:
-      - 8080:8080
+      - 9001:8080
     links:
       - mysql:mysql
       - mailcatcher:mailcatcher
@@ -13,13 +16,8 @@ services:
 
   mysql:
     build: ./mysql
-    ports:
-      - 3306:3306
-    environment:
-      MYSQL_ROOT_PASSWORD: supersecret
-      MYSQL_DATABASE: cascade
-      MYSQL_USER: cas
-      MYSQL_PASSWORD: supersecret
+    volumes:
+      - ./mysql/data:/var/lib/mysql
 
   mailcatcher:
     image: tophfr/mailcatcher
