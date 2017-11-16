@@ -3,6 +3,8 @@
 mysql/cascade.sql
 **/.DS_Store
 tomcat/cascade*
+tomcat/webapps/ROOT
+
 cascade_database_mysql
 
 publish/*
