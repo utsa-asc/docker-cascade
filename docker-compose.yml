@@ -5,6 +5,9 @@ services:
     container_name: RR170563IP01
     ports:
       - 8080:8080
+    depends_on:
+      - mysql
+      - mailcatcher
     links:
       - mysql:mysql
       - mailcatcher:mailcatcher
