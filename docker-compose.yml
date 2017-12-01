@@ -4,17 +4,14 @@ services:
     build: ./tomcat
     container_name: RR170563IP01
     ports:
-      - 8080:8080
-    depends_on:
-      - mysql
-      - mailcatcher
+      - 9001:8080
     links:
-      - mysql:mysql
+      - mysql-cas:mysql
       - mailcatcher:mailcatcher
     volumes:
-      - ./publish:/opt/cas/tomcat/webapps/publish
+      - ./publish:/usr/local/tomcat/webapps/publish
 
-  mysql:
+  mysql-cas:
     build: ./mysql
     ports:
       - 3306:3306
