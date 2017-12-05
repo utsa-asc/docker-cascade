@@ -21,7 +21,14 @@ services:
       MYSQL_USER: cas
       MYSQL_PASSWORD: supersecret
 
+  web:
+    build: ./web-server
+    ports:
+      - 9080:80
+    volumes:
+      - ./publish:/usr/local/apache2/htdocs:ro
+
   mailcatcher:
     image: tophfr/mailcatcher
     ports:
-      - 8825:80
+      - 9025:80
