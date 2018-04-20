@@ -26,7 +26,7 @@ services:
     ports:
       - 9080:80
     volumes:
-      - ./publish:/usr/local/apache2/htdocs:ro
+      - ./publish:/usr/local/apache2/htdocs
 
   mailcatcher:
     image: tophfr/mailcatcher
