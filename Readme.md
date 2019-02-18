@@ -3,7 +3,7 @@ cascade on docker (with mysql)
 
 __Setup:__
 
-- download the manual installation files for cascade (cascade-x.x.zip)
+- download the manual installation files for cascade (cascade-x.x.zip) [https://www.hannonhill.com/downloads/cascade/]
   - place the unzipped folder inside the tomcat directory ("./tomcat/cascade-x.x")
 - download the cascade sql file
   - place the sql file inside the mysql folder ("./mysql/cascade.sql")
