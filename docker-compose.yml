@@ -9,7 +9,8 @@ services:
       - mysql-cas:mysql
       - mailcatcher:mailcatcher
     volumes:
-      - ./publish:/usr/local/tomcat/webapps/publish
+      - ./tomcat/webapps:/usr/local/tomcat/webapps
+#      - ./publish:/usr/local/tomcat/webapps/publish
 
   mysql-cas:
     build: ./mysql
