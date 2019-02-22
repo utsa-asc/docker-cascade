@@ -22,3 +22,4 @@ cascade_database_mysql.zip
 
 ROOT-*
 tomcat/webapps/publish/*
+tomcat/ssl

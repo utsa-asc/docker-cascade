@@ -5,12 +5,13 @@ services:
     container_name: RR170563IP01
     ports:
       - 9001:8080
+      - 8443:8443
     links:
       - mysql-cas:mysql
       - mailcatcher:mailcatcher
     volumes:
       - ./tomcat/webapps:/usr/local/tomcat/webapps
-#      - ./publish:/usr/local/tomcat/webapps/publish
+      - ./tomcat/ssl:/usr/local/tomcat/ssl
 
   mysql-cas:
     build: ./mysql
