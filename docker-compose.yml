@@ -20,15 +20,27 @@ services:
       MYSQL_DATABASE: cascade
       MYSQL_USER: cas
       MYSQL_PASSWORD: supersecret
-
+    volumes:
+      - ./mysql-data:/var/lib/mysql
   web:
     build: ./web-server
     ports:
       - 9080:80
     volumes:
-      - ./tomcat/webapps/publish/graduateschool:/usr/local/apache2/htdocs
+      - ./tomcat/webapps/publish:/usr/local/apache2/htdocs
 
   mailcatcher:
     image: tophfr/mailcatcher
     ports:
       - 9025:80
+
+  phpmyadmin:
+    image: 'phpmyadmin/phpmyadmin'
+    depends_on:
+      - mysql-cas
+    ports:
+      - '8181:80'
+    environment:
+      MYSQL_ROOT_PASSWORD: 'supersecret'
+    links:
+      - mysql-cas:db

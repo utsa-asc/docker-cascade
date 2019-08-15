@@ -1,4 +1,4 @@
-FROM tomcat:9-jre8-alpine
+FROM tomcat:9-jdk12-openjdk-oracle
 
 COPY ./context.xml /usr/local/tomcat/conf/context.xml
 COPY ./server.xml /usr/local/tomcat/conf/server.xml
