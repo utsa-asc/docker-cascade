@@ -8,7 +8,7 @@
     username="cas"
     password="supersecret"
     driverClassName="com.mysql.jdbc.Driver"
-    url="jdbc:mysql://mysql/cascade?useUnicode=true&amp;characterEncoding=UTF-8"
+    url="jdbc:mysql://mysql-cas/cascade?useUnicode=true&amp;characterEncoding=UTF-8"
     maxTotal="50"
     maxIdle="10"
     maxWaitMillis="3000"

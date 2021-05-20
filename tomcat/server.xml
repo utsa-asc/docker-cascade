@@ -43,6 +43,8 @@
               description="User database that can be updated and saved"
               factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
               pathname="conf/tomcat-users.xml" />
+
+              <Environment name="cascadeSchemaName" type="java.lang.String" value=""/>
   </GlobalNamingResources>
 
   <!-- A "Service" is a collection of one or more "Connectors" that share
@@ -106,10 +108,10 @@ certificateKeyPassword="changeit"
                maxThreads="150" SSLEnabled="true" >
         <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
         <SSLHostConfig>
-            <Certificate certificateKeyFile="ssl/localhost-docker-key.pem"
-                         certificateFile="ssl/localhost-docker-cer.pem"
-                         certificateKeyPassword="changeit"
-                         type="RSA" />
+          <Certificate certificateKeyFile="ssl/localhost-docker-key.pem"
+                       certificateFile="ssl/localhost-docker-cer.pem"
+                       certificateKeyPassword="changeit"
+                       type="RSA" />
         </SSLHostConfig>
     </Connector>
 
